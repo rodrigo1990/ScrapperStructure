@@ -15,6 +15,7 @@ class FullTextCommand extends  Command
     private $command;
     private $filePath ;
     private $docName;
+    private $folderPath;
     private $pdf;
     const COOKIE_PATH = '/tmp/cookie.txt';
 
@@ -23,6 +24,7 @@ class FullTextCommand extends  Command
         $this->prepareFolders();
         $this->docName = $this->setDocName( $docLink );
         $this->filePath = storage_path() . "/app/pdfs/". $this->docName;
+        $this->folderPath = storage_path() . "/app/pdfs/";
         $this->command = $command;
         $this->pdf = $this->setPDFFile( $docLink );
 
@@ -58,11 +60,8 @@ class FullTextCommand extends  Command
     }
 
     private function prepareFolders(){
-        if (!file_exists(storage_path() . '/app/pdfs')) {
+        if (!file_exists($this->folderPath)) {
             Storage::makeDirectory('pdfs');
-        }
-        if (!file_exists(storage_path() . '/app/pdf2text')) {
-            Storage::makeDirectory('pdf2text');
         }
     }
 
