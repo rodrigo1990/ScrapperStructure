@@ -1,14 +1,13 @@
 <?php
 
 
-namespace App\Console\Model;
+namespace App\Console\Model\DocTypes;
 
 
 use Illuminate\Support\Facades\DB;
 
 class DocTypeCommand
 {
-    private $docType;
     private $type;
 
     function __construct( $text, $type = null ){

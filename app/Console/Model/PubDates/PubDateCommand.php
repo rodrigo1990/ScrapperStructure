@@ -13,6 +13,10 @@ class PubDateCommand
         $this->pubdate = $this->setPubDate( $string );
     }
 
+    public function getPubDate(){
+        return $this->pubdate;
+    }
+
     /**
      * Get date time from string (title or description) - SHOULD BE MOVED TO ANOTHER CLASS!!!!
      * @param $string

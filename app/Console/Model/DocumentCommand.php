@@ -6,20 +6,22 @@ namespace App\Console\Model;
 
 use App\Console\Model\DocLink\DocLinkCommand;
 use App\Console\Model\DocTitles\DocTitleCommand;
-use App\Console\Model\PeopleCommand\PeopleCommand;
+use App\Console\Model\DocTypes\DocTypeCommand;
+use App\Console\Model\Fulltexts\FullTextCommand;
+use App\Console\Model\People\PeopleCommand;
 use App\Console\Model\PubDates\PubDateCommand;
 use App\Console\Model\RecordNumer\RecordNumberCommand;
 
 class DocumentCommand
 {
 
-    private $docLinkCommand;
-    private $pubDateCommand;
-    private $recordNumberCommand;
-    private $docTitleCommand;
-    private $fulltextCommand;
-    private $docTypeCommand;
-    private $peopleCommand;
+    private $docLink;
+    private $pubDate;
+    private $recordNumber;
+    private $docTitle;
+    private $fulltext;
+    private $docType;
+    private $people;
 
     function _construct(
             /*DocLinkCommand $docLinkCommand,
@@ -41,38 +43,62 @@ class DocumentCommand
 
     }
 
-    public function setlinkCommand( $docLinkCommand ){
-        return $this->docLinkCommand = $docLinkCommand->getlink();
+    public function setlink( String $docLink ){
+        return $this->docLink = $docLink;
     }
 
-    public function setPubDateCommand( $pubDateCommand ){
-        return $this->pubDateCommand = $pubDateCommand->getPubDateCommand();
+    public function setPubDate( String $pubDate ){
+        return $this->pubDate = $pubDate;
     }
 
-    public function setRecordNumberCommand( $recordNumberCommand ){
-        return $this->recordNumberCommand = $recordNumberCommand->getRecordNumberCommand();
+    public function setRecordNumber( String $recordNumber ){
+        return $this->recordNumber = $recordNumber;
     }
 
-    public function setDocTitleCommand( $docTitleCommand ){
-        return $this->docTitleCommand = $docTitleCommand->getDocTitleCommand();
+    public function setDocTitle( String $docTitle ){
+        return $this->docTitle = $docTitle;
     }
 
-    public function setFulltext( $fulltext ){
-        return $this->fulltextCommand = $fulltext->getFulltext();
+    public function setFulltext( String $fullText ){
+        return $this->fulltext = $fullText;
     }
 
-    public function setType( $docTypeCommand ){
-        return $this->docTypeCommand = $docTypeCommand->getType();
+    public function setType( String $docType ){
+        return $this->docType = $docType;
     }
 
-    public function setPeopleCommand( $peopleCommand ){
-        return $this->peopleCommand = $peopleCommand->getPeopleCommand();
+    public function setPeople( String $people ){
+        return $this->people = $people;
     }
 
-
-    public function mapDocumentModel(){
-        //code that will map
+    public function getlink(){
+        return $this->docLink;
     }
+
+    public function getPubDate(){
+        return $this->pubDate;
+    }
+
+    public function getRecordNumber(){
+        return $this->recordNumber;
+    }
+
+    public function getDocTitle(){
+        return $this->docTitle;
+    }
+
+    public function getFulltext(){
+        return $this->fulltext;
+    }
+
+    public function getType(){
+        return $this->docType;
+    }
+
+    public function getPeople(){
+        return $this->people;
+    }
+
 
 
 
